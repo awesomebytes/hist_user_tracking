@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="hist_user_tracking" type="cloud_filter.exe" name="cloud_filter" output="screen" />
+</launch>
+

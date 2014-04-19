@@ -1,0 +1,25 @@
+<launch>
+
+<!--
+You need to place the launch_modular folder in the openni_camera_unstable package.
+
+There are 3 top-level files you can use directly:
+
+openni_live.launch: launches the driver, publishing live data
+openni_record.launch: launches the driver, publishing live data, and recording part of the data
+openni_play.launch: launches rosbag, processes the data and publishes it.
+openni_record assumes you have ~/ros/bags directory already created.
+Bags are placed there.
+To play the correct bag, you need to edit the include/openni_play_bag.launch file:
+
+<arg name="BAG_NAME" value="kinect.bag"/>
+with the name of the bag you want, assuming it's in the ~ros/bags directory.
+-->
+
+  <include file="$(find hist_user_tracking)/launch_modular/include/openni_manager.launch"/>
+
+  <include file="$(find hist_user_tracking)/launch_modular/include/openni_driver.launch"/>
+
+  <include file="$(find hist_user_tracking)/launch_modular/include/openni_proc.launch"/>
+
+</launch>

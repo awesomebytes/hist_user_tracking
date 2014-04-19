@@ -1,0 +1,48 @@
+<package>
+  <description brief="hist_user_tracking">
+
+     hist_user_tracking
+
+  </description>
+  <author>arnaud ramey</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hist_user_tracking</url>
+
+  <depend package="roscpp"/>
+  <depend package="roslib"/>
+
+  <!-- messages -->
+  <depend package="geometry_msgs"/>
+  <depend package="visualization_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="nav_msgs"/>
+<!--  <depend package="pcl_visualization"/>-->
+
+  <!-- kinect interaction -->
+  <!--<depend package="openni"/>
+  <depend package="openni_camera"/> -->
+  <depend package="image_geometry"/>
+  <!-- <depend package="nite"/> -->
+  <!-- <depend package="kdl"/> -->
+  <depend package="tf"/>
+
+  <!-- OpenCV -->
+  <depend package="cv_bridge"/>
+
+  <!-- AD - ROS -->
+  <!-- <depend package="ros_utils"/>
+  <depend package="compressed_rounded_image_transport"/> -->
+
+  <!-- AD -->
+  <!-- <depend package="ad_core"/>
+  <depend package="vision"/> -->
+
+  <export>
+    <cpp cflags="-I${prefix}" lflags="-L${prefix}/lib"/>
+  </export>
+
+</package>
+
+

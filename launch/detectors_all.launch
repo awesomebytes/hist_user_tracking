@@ -1,0 +1,17 @@
+<launch>
+  <!-- rviz -->
+  <include file="$(find main_control)/launch/viz.launch" />
+
+  <!-- normal cluster detector -->
+  <include file="$(find hist_user_tracking)/launch/cluster_detector.launch" />
+
+  <!-- normal cluster detector -->
+  <include file="$(find hist_user_tracking)/launch/fast_cluster_detector.launch" />
+
+  <!-- face detector -->
+  <node pkg="hist_user_tracking" type="face_detector.exe" name="face_detector" output="screen" />
+
+  <!-- face detector -->
+  <node pkg="hist_user_tracking" type="opencv_people_detector.exe" name="opencv_people_detector" output="screen" />
+</launch>
+

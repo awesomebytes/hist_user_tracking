@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="hist_user_tracking" type="test_conditional_particle_filter.exe"
+        name="test_conditional_particle_filter" output="screen"
+        required="true" />
+
+  <node pkg="hist_user_tracking" type="twist_stamper.exe"
+        name="twist_stamper" output="screen" />
+</launch>
+

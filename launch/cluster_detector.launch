@@ -1,0 +1,10 @@
+<launch>
+  <!-- the detector pipeline -->
+<!--
+  No cloud filter, use cloud_filter.launch from the robot
+-->
+  <node pkg="hist_user_tracking" type="floor_removal.exe" name="floor_removal" output="screen" />
+  <node pkg="hist_user_tracking" type="cluster_detector.exe" name="cluster_detector" output="screen" />
+
+</launch>
+

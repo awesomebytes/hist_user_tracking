@@ -1,0 +1,18 @@
+<launch>
+  <!-- do not use Linux wall time but a simulated time -->
+  <param name="/use_sim_time" value="true"/>
+
+  <!-- the bag -->
+  <node pkg="rosbag" type="rosbag" name="rosbag"
+          args="play -l $(find hist_user_tracking)/bag/kinect_people.bag --clock">
+    <remap  from="/camera/depth/points_drop"
+            to="/camera/depth/points"/>
+  </node>
+
+  <node pkg="robots_2dnav" type="static_tf_broadcaster.exe"
+        name="static_tf_broadcaster"
+        output="screen"
+        args="tf:/openni_camera-/base_link:pitch=-0.2"
+        />
+
+</launch>

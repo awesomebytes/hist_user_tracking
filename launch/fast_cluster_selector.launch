@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="hist_user_tracking" type="fast_cluster_selector.exe"
+        name="fast_cluster_selector" output="screen"
+        args=""/>
+</launch>
+

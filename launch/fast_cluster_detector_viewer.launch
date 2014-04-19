@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="image_view" type="image_view" name="image_view_gui" output="screen"
+        args="image:=/fast_cluster_detector_img_gui compressed"/>
+</launch>
+

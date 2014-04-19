@@ -1,0 +1,19 @@
+<launch>
+  <!-- decompress the kinect images -->
+  <include file="$(find robots_2dnav)/launch/kinect_decompress_depth.launch" />
+
+  <!-- fast_cluster_detector -->
+  <node pkg="hist_user_tracking" type="fast_cluster_detector.exe" name="fast_cluster_detector" output="screen"
+        args="_image_transport:=raw" />
+
+<!--
+  <include file="$(find hist_user_tracking)/launch/fast_cluster_selector.launch" />
+  <include file="$(find hist_user_tracking)/launch/fast_cluster_detector_viewer.launch" />
+-->
+  <include file="$(find main_control)/launch/viz.launch" />
+
+  <node pkg="rxtools" type="rxplot" name="plot_objects_nb"
+        args="/fast_cluster_detector_objects_nb/data
+        --legend=foo --period=30" />
+</launch>
+
